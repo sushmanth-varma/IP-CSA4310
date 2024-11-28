@@ -1,0 +1,19 @@
+-- Create the database (if not already created)
+CREATE DATABASE IF NOT EXISTS complaints_db;
+
+-- Select the database for use
+USE complaints_db;
+
+-- Create the complaints table
+CREATE TABLE complaints (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    age INT,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(15),
+    location VARCHAR(100),
+    category VARCHAR(50),
+    description TEXT,
+    solution TEXT,
+    status ENUM('Pending', 'Resolved', 'Rejected') DEFAULT 'Pending'
+);

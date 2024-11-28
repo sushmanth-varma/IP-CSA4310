@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navigation {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .navigation button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navigation button:hover {
+            background-color: #2980b9;
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ecf0f1;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation to switch pages -->
+    <div class="container">
+        <div class="navigation">
+            <button onclick="showPage('loginPage')">Login</button>
+            <button onclick="showPage('registerPage')">Register</button>
+            <button onclick="showPage('postComplaintPage')">Post Complaint</button>
+            <button onclick="showPage('statusPage')">Complaint Status</button>
+            <button onclick="showPage('feedbackPage')">Feedback</button>
+            <button onclick="showPage('adminPage')">Admin Dashboard</button>
+            <button onclick="showPage('officerPage')">Officer Dashboard</button>
+        </div>
+        
+        <!-- Login Page -->
+        <div id="loginPage" class="page active">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="return validateLogin()">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" required>
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Register Page -->
+        <div id="registerPage" class="page">
+            <h2>Register</h2>
+            <form id="registerForm" onsubmit="return validateRegister()">
+                <label for="registerName">Full Name:</label>
+                <input type="text" id="registerName" name="name" required>
+
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="email" required>
+
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="password" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Post Complaint Page -->
+        <div id="postComplaintPage" class="page">
+            <h2>Post a Complaint</h2>
+            <form id="complaintForm" onsubmit="return validateComplaint()">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="18">
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="category">Complaint Category:</label>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="customerService">Customer Service</option>
+                    <option value="productQuality">Product Quality</option>
+                    <option value="deliveryIssues">Delivery Issues</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="title">Complaint Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">Complaint Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <button type="submit">Submit Complaint</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Complaint Management System | All Rights Reserved</p>
+    </div>
+
+    <script>
+        // Show selected page and hide others
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // Login Validation
+        function validateLogin() {
+            const email = document.getElementById("loginEmail").value.trim();
+            const password = document.getElementById("loginPassword").value.trim();
+
+            if (email === "" || password === "") {
+                alert("Both fields are required!");
+                return false;
+            }
+            alert("Login successful!");
+            showPage('postComplaintPage'); // Redirect to Post Complaint page after successful login
+            return false;
+        }
+
+        // Register Validation
+        function validateRegister() {
+            const name = document.getElementById("registerName").value.trim();
+            const email = document.getElementById("registerEmail").value.trim();
+            const password = document.getElementById("registerPassword").value.trim();
+
+            if (name === "" || email === "" || password === "") {
+                alert("All fields are required!");
+                return false;
+            }
+            alert("Registration successful!");
+            showPage('loginPage'); // Redirect to Login page after successful registration
+            return false;
+        }
+
+        // Complaint Validation
+        function validateComplaint() {
+            const name = document.getElementById("name").value.trim();
+            const age = document.getElementById("age").value.trim(); 
+            const dob = document.getElementById("dob").value.trim();
+            const category = document.getElementById("category").value.trim();
+            const location = document.getElementById("location").value.trim();
+            const title = document.getElementById("title").value.trim();
+            const description = document.getElementById("description").value.trim();
+
+            if (name === "" || age === "" || dob === "" || category === "" || location === "" || title === "" || description === "") {
+                alert("All fields are required!");
+                return false;
+            }
+            alert("Complaint submitted successfully!");
+            showPage('statusPage'); // Redirect to Status page after submitting complaint
+            return false;
+        }
+    </script>
+</body>
+</html>

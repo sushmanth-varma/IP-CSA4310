@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="home-page">
+        <h2>Welcome to Complaint Management System</h2>
+        <button onclick="showPage('login-page')">Admin Login</button>
+        <button onclick="userLogin()">User Login</button>
+    </div>
+
+    <div id="login-page" class="hidden">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="adminLogin()">Admin Login</button>
+        <button onclick="userLogin()">User Login</button>
+    </div>
+
+    <div id="admin-page" class="hidden">
+        <h2>Admin Dashboard</h2>
+        <button onclick="showPage('home-page')">Logout</button>
+        <div id="complaints-list"></div>
+    </div><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="home-page">
+        <h2>Welcome to Complaint Management System</h2>
+        <button onclick="showPage('login-page')">Admin Login</button>
+        <button onclick="userLogin()">User Login</button>
+    </div>
+
+    <div id="login-page" class="hidden">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="adminLogin()">Admin Login</button>
+        <button onclick="userLogin()">User Login</button>
+    </div>
+
+    <div id="admin-page" class="hidden">
+        <h2>Admin Dashboard</h2>
+        <button onclick="showPage('home-page')">Logout</button>
+        
+        <!-- Complaints List Section -->
+        <h3>Complaints</h3>
+        <div id="complaints-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

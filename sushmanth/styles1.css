@@ -1,0 +1,94 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20 0vh;
+}
+
+/* Container for Form */
+.container {
+    background-color: #fff;
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 550px;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    color: #f06b6b;
+    margin-bottom: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Input Fields */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Textarea specific styling */
+textarea {
+    height: 120px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #68c3c0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #55a8a6;
+}
+
+/* Navigation Link Styling */
+.nav-link {
+    margin-top: 20px;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: #f06b6b;
+    font-weight: bold;
+}
+
+.nav-link a:hover {
+    color: #e65c5c;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}

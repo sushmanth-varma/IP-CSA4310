@@ -1,0 +1,381 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Background Styling for body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    background: linear-gradient(135deg, #f06b6b, #ffde59, #68c3c0);
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    width: 100%;
+    max-width: 1450px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Image Styling */
+.page-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Adjust based on your preference */
+    margin-bottom: 5rem; /* Adds spacing between the image and the content */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading Styling */
+.container h1 {
+    font-size: 2em;
+    color: #f06b6b;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #ff914d;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #ff914d;
+}
+
+/* Button Styling */
+.form-group button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    background-color: #68c3c0;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-group button:hover {
+    background-color: #55a8a6;
+    transform: translateY(-2px);
+}
+
+/* Navigation Links */
+.nav-link {
+    margin-top: 1.5rem;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.nav-link a {
+    color: #ff914d;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link a:hover {
+    color: #e65c5c;
+}
+
+/* Page Visibility Toggle */
+.hidden {
+    display: none;
+}
+
+/* Background Image Styling for each page */
+
+/* Registration Page Background */
+#register-page {
+    background: url('register.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 4rem;
+}
+
+/* Login Page Background */
+#login-page {
+    background: url('login.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 4rem;
+}
+
+/* Home Page Background */
+#home-page {
+    background: url('home.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 4rem;
+}
+
+/* Admin Page Background */
+#admin-page {
+    background: url('admin.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 4rem;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+h1 {
+  color: #333;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.complaints-list {
+  display: grid;
+  gap: 15px;
+}
+
+.complaint {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.complaint .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.complaint .status {
+  padding: 5px;
+  border-radius: 4px;
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status.progress {
+  background-color: #f0a500;
+}
+
+.status.pending {
+  background-color: #e74c3c;
+}
+
+.status.completed {
+  background-color: #2ecc71;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+.contact-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.contact-details, .contact-form {
+  margin-bottom: 30px;
+}
+
+.contact-details h2, .contact-form h2 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.contact-details p {
+  font-size: 16px;
+  color: #555;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#form-feedback {
+  text-align: center;
+  color: #f00;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.filter-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#complaints-list {
+  margin-top: 20px;
+}
+
+.complaint {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+}
+
+.complaint .status {
+  margin-top: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.complaint .status.pending {
+  background-color: yellow;
+}
+
+.complaint .status.progress {
+  background-color: orange;
+}
+
+.complaint .status.completed {
+  background-color: green;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#login-page input {
+    margin: 10px;
+    padding: 8px;
+}
+
+#complaints-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.complaint {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+.complaint .title {
+    font-weight: bold;
+}
+
+.complaint .status {
+    margin-top: 10px;
+}
+
+.complaint .status.progress {
+    color: orange;
+}
+
+.complaint .status.solved {
+    color: green;
+}
+
+textarea {
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+}
+
+button.resolve-btn {
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+}
+
